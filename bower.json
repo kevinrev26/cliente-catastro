@@ -1,0 +1,30 @@
+{
+  "name": "catastro",
+  "authors": [
+    "Kevin Rivera <kevinrev26@gmail.com>"
+  ],
+  "description": "Gestion de cuentas corrientes para las municipalidades",
+  "main": "",
+  "keywords": [
+    "catastro",
+    "cuenta",
+    "corriente",
+    "impuestos",
+    "planes",
+    "de",
+    "pago"
+  ],
+  "license": "GPL",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.1"
+  }
+}
