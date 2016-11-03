@@ -8,3 +8,4 @@
 
 //Inicializando la aplicacion con las dependencias requeridas
 angular.module('catastro', ['ngMaterial']);
+/* Configurando la paleta de colores de la aplicacion */
