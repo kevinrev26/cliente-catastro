@@ -6,7 +6,7 @@
 /test/reports
 /test/tmp/
 
-
+.brackets.json
 /component.json
 /bower_components
 /test/sample

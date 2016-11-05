@@ -7,5 +7,16 @@
 */
 
 //Inicializando la aplicacion con las dependencias requeridas
-angular.module('catastro', ['ngMaterial']);
+angular.module('catastro', [
+                            'ngMaterial',
+                            'ngRoute',
+                            'catastro.app',
+                            'catastro.login']);
+/*Configurando las rutas*/
+function configuracionRutas($routeProvider){
+    $routeProvider.when('/'{
+                        
+    });
+}
+
 /* Configurando la paleta de colores de la aplicacion */
