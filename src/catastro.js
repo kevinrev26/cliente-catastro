@@ -12,11 +12,25 @@ angular.module('catastro', [
                             'ngRoute',
                             'catastro.app',
                             'catastro.login']);
-/*Configurando las rutas*/
+
+
+/*Funcion que especifica las rutas a mapear*/
 function configuracionRutas($routeProvider){
-    $routeProvider.when('/'{
+    $routeProvider.when('/', {
+            templateUrl: 'src/login/views/home.html',
+            controller: 'loginController',
+            controllerAs: 'login'
                         
+    })
+    .otherwise({
+        redirectTo: '/'
     });
+    
+    //$locationProvider.html5Mode(true);
 }
+
+//Agregando la funcion al modulo de la aplicacion
+angular.module('catastro')
+               .config(['$routeProvider', configuracionRutas]);
 
 /* Configurando la paleta de colores de la aplicacion */
