@@ -11,7 +11,8 @@ angular.module('catastro', [
                             'ngMaterial',
                             'ngRoute',
                             'catastro.app',
-                            'catastro.login']);
+                            'catastro.login',
+                            'catastro.dashboard']);
 
 
 /*Funcion que especifica las rutas a mapear*/
@@ -22,6 +23,11 @@ function configuracionRutas($routeProvider){
             controllerAs: 'login'
                         
     })
+    .when('/dashboard', {
+    		templateUrl: 'src/dashboard/views/dashboard.html',
+    		controller: 'dashboardController',
+    		controllerAs: 'dashboard'
+    })
     .otherwise({
         redirectTo: '/'
     });
@@ -29,8 +35,18 @@ function configuracionRutas($routeProvider){
     //$locationProvider.html5Mode(true);
 }
 
-//Agregando la funcion al modulo de la aplicacion
+//Funcion para configuracion de la paleta de colores
+function configurarPaleta($mdThemingProvider){
+	$mdThemingProvider.theme('default')
+		.primaryPalette('light-blue')
+		.accentPalette('brown');
+		
+}
+
+//Agregando la funcion de rutas al modulo de la aplicacion
 angular.module('catastro')
                .config(['$routeProvider', configuracionRutas]);
 
 /* Configurando la paleta de colores de la aplicacion */
+angular.module('catastro')
+				.config(['$mdThemingProvider', configurarPaleta]);

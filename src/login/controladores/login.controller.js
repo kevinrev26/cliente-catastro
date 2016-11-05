@@ -7,8 +7,8 @@
 *     
 **/
 function loginController() {
-    var login = this;
-    login.titulo = "Formulario de entrada al sistema";
+    //var login = this;
+    //login.titulo = "Formulario de entrada al sistema";
 }
 
 angular.module('catastro.login')

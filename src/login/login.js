@@ -3,5 +3,5 @@
 * [Login]
 * Modulo que controla la gestion de la funcionalidad de login
 */
-angular.module('catastro.login', ['catastro.app']);
+angular.module('catastro.login', []);
 
