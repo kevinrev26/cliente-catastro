@@ -12,7 +12,11 @@ function navegacion() {
     return {
       restrict: 'EA',
       scope: {
-          titulo: '=titulo' 
+          titulo: '=titulo',
+          showNav : false,
+          toggleNav : function(){
+          	this.showNav = !this.showNav;
+          } 
       },
       templateUrl: 'src/app/views/navegacion.html'
     };

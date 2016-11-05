@@ -1,5 +1,15 @@
-<md-toolbar layout-padding>
+<md-toolbar md-scroll-shrink="true" layout-padding>
+	<span flex></span>
     <div class="md-toolbar-tools">
+    	<md-button> 
+    		<md-icon md-svg-src="assets/icons/menu.svg" ng-click="toggleNav()"></md-icon>
+    	</md-button>
         <h2>{{titulo}}</h2>
-    </div>
+        <span flex></span>
+	</div>
 </md-toolbar>
+<md-sidenav md-is-open="showNav" class="md-sidenav-left">
+	<md-toolbar layout-padding class="md-medium-tall">
+		<h2 class="md-toolbar-tools">Actions<h2>
+	</md-toolbar>
+</md-sidenav>
