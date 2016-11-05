@@ -13,12 +13,14 @@ function navegacion() {
       restrict: 'EA',
       scope: {
           titulo: '=titulo',
-          showNav : false,
-          toggleNav : function(){
-          	this.showNav = !this.showNav;
-          } 
       },
-      templateUrl: 'src/app/views/navegacion.html'
+      templateUrl: 'src/app/views/navegacion.html',
+      controller: function($scope){
+          $scope.showNav = false;
+          $scope.toggleNav = function(){
+              $scope.showNav = !$scope.showNav;
+          }
+      }
     };
 }
 
