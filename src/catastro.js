@@ -12,7 +12,8 @@ angular.module('catastro', [
                             'ngRoute',
                             'catastro.app',
                             'catastro.login',
-                            'catastro.dashboard']);
+                            'catastro.dashboard',
+                            'catastro.contribuyente']);
 
 
 /*Funcion que especifica las rutas a mapear*/
@@ -27,6 +28,11 @@ function configuracionRutas($routeProvider){
     		templateUrl: 'src/dashboard/views/dashboard.html',
     		controller: 'dashboardController',
     		controllerAs: 'dashboard'
+    })
+    .when('/agregar-contribuyente', {
+    		templateUrl: 'src/contribuyente/views/agregar-contribuyente.html',
+    		controller: 'contribuyenteController',
+    		controllerAs: 'contribuyente'
     })
     .otherwise({
         redirectTo: '/'
