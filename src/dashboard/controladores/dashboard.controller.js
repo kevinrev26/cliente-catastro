@@ -7,7 +7,7 @@
 //Funcion para registrar el controlador en el modulo catastro.dashboard
 function dashboard() {
 	var dashboard = this;
-	dashboard.titulo = "Herramientas del sistema";
+	dashboard.titulo = "Herramientas mas utilizadas";
 }
 
 //registrando el controlador en el modulo
