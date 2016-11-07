@@ -10,8 +10,9 @@
 angular.module('catastro', [
                             'ngMaterial',
                             'ngRoute',
+                            'ngMessages',
                             'catastro.app',
-                            'catastro.login',
+                            'catastro.login',                        
                             'catastro.dashboard',
                             'catastro.contribuyente']);
 
