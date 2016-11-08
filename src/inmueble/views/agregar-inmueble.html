@@ -1,0 +1,47 @@
+<navegacion titulo="addProperty.titulo"></navegacion>
+<md-content layout="column">
+	<form name="inmuebleForm">
+		<md-input-container class="md-block">
+			<md-select ng-model="addProperty.formData.TipoInmueble" placeholder="Tipo de inmueble">
+				<md-option ng-value="tipo" ng-repeat="tipo in addProperty.tiposInmuebles">
+					{{tipo}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container class="md-block">
+			<md-checkbox ng-model="addProperty.formData.isComercial">Inmueble comercial</md-checkbox>
+		</md-input-container>
+		<md-input-container class="md-block">
+			<md-checkbox ng-model="addProperty.formData.isTipoD">Alumbrado Tipo-D</md-checkbox>
+		</md-input-container>
+	
+		<md-input-container class="md-block">
+			<label>Clave catastral</label>
+			<input required minlength="7" maxlength="7" ng-pattern="/^[0-9]+$/" md-no-asterisk ng-model="addProperty.formData.clave" type="text" placeholder="2521202" name="inputClave">
+			<div ng-messages="inmuebleForm.inputClave.$error" ng-show="inmuebleForm.inputClave.$dirty" multiple>
+				<div ng-message="required">La clave es obligatoria</div>
+				<div ng-message="minlength">Debe contener 7 digitos</div>
+				<div ng-message="maxlength">Debe contener 7 digitos</div>
+				<div ng-message="pattern">No puede contener caracteres</div>
+			</div>
+		</md-input-container>
+		<md-input-container>
+			<label>Valor del inmueble</label>
+			<input required ng-pattern="/^[1-9]\d*(\.\d+)?$/" md-no-asterisk ng-model="addProperty.formData.valor" name="inputValor">
+			<div ng-messages="inmuebleForm.inputValor.$error" ng-show="inmuebleForm.inputValor.$dirty" multiple>
+				<div ng-message="required">El valor es obligatorio</div>
+				<div ng-message="pattern">No puede contener caracteres</div>		
+			</div>
+		</md-input-container>
+		<md-input-container>
+			<label>Metros de frente</label>
+			<input required ng-pattern="/^[1-9]\d*(\.\d+)?$/" md-no-asterisk ng-model="addProperty.formData.metros" name="inputMetros">
+			<div ng-messages="inmuebleForm.inputMetros.$error" ng-show="inmuebleForm.inputMetros.$dirty" multiple>
+				<div ng-message="required">El valor es obligatorio</div>
+				<div ng-message="pattern">No puede contener caracteres</div>		
+			</div>
+		</md-input-container>
+		<md-button class="md-raised md-warn" ng-disabled="inmuebleForm.$invalid" ng-click="addProperty.enviarFormulario()">Agregar nuevo</md-button>
+	
+	</form>
+</md-content>

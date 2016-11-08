@@ -77,6 +77,16 @@ function sidenav(){
 					'url' : '/#estado-de-cuenta'
 				}
 			]
+		},
+		{
+			'title': 'INMUEBLES',
+			'icon' : 'assets/icons/bank.svg',
+			'options' : [
+				{
+					'title' : 'Agregar inmueble',
+					'url' : '/#agregar-inmueble'
+				}
+			]
 		}
 	];
 	side.showNav = false;

@@ -14,7 +14,9 @@ angular.module('catastro', [
                             'catastro.app',
                             'catastro.login',                        
                             'catastro.dashboard',
-                            'catastro.contribuyente']);
+                            'catastro.contribuyente',
+                            'catastro.tasas',
+                            'catastro.inmueble']);
 
 
 /*Funcion que especifica las rutas a mapear*/
@@ -39,6 +41,16 @@ function configuracionRutas($routeProvider){
     	templateUrl: 'src/contribuyente/views/listar-contrib.html',
     	controller: 'listContribCtrl',
     	controllerAs: 'listContrib'
+    })
+    .when('/agregar-tasa',{
+    	templateUrl: 'src/tasas/views/agregar-tasa.html',
+    	controller: 'agregarTasaCtrl',
+    	controllerAs: 'addTax'
+    })
+    .when('/agregar-inmueble', {
+    	templateUrl: 'src/inmueble/views/agregar-inmueble.html',
+    	controller: 'agregarInmuebleCtrl',
+    	controllerAs: 'addProperty'
     })
     .otherwise({
         redirectTo: '/'
