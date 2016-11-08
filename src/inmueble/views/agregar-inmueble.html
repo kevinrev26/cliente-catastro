@@ -41,6 +41,15 @@
 				<div ng-message="pattern">No puede contener caracteres</div>		
 			</div>
 		</md-input-container>
+        <md-input-container>
+            <label>Observaciones</label>
+            <textarea ng-model="addProperty.formData.observaciones" name="inputObservaciones" maxlength="200" required
+                      md-no-asterisk rows="5"></textarea>
+            <div ng-messages="inmuebleForm.inputOservaciones.$error" ng-show="inmuebleForm.inputObservaciones.$dirty">
+                <div ng-message="required">Complete las observaciones</div>
+            
+            </div>
+        </md-input-container>
 		<md-button class="md-raised md-warn" ng-disabled="inmuebleForm.$invalid" ng-click="addProperty.enviarFormulario()">Agregar nuevo</md-button>
 	
 	</form>
