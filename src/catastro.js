@@ -35,6 +35,11 @@ function configuracionRutas($routeProvider){
     		controller: 'contribuyenteController',
     		controllerAs: 'contribuyente'
     })
+    .when('/buscar-contribuyente', {
+    	templateUrl: 'src/contribuyente/views/listar-contrib.html',
+    	controller: 'listContribCtrl',
+    	controllerAs: 'listContrib'
+    })
     .otherwise({
         redirectTo: '/'
     });

@@ -47,7 +47,7 @@
 		</md-input-container>
 		<md-input-container>
 			<label>Correo Electronico </label>
-			<input required minlength="5" name="inputEmail" ng-model="contribuyente.formData.email" type="email" placeholder="kevin@example.com"> 
+			<input required minlength="5" md-no-asterisk name="inputEmail" ng-model="contribuyente.formData.email" type="email" placeholder="kevin@example.com"> 
 			<div ng-messages="contribForm.inputEmail.$error" ng-show="contribForm.inputEmail.$dirty" multiple>
 				<div ng-message="required">El campo de correo es requerido</div>
 				<div ng-message="email">Direccion de correo invalida</div>
@@ -55,6 +55,5 @@
 		</md-input-container>
 		<md-button class="md-raised md-warn" ng-disabled="contribForm.$invalid" ng-click="contribuyente.enviarFormulario()">Agregar nuevo</md-button>
 	</form>
-	
 	
 </md-content>

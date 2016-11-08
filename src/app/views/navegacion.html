@@ -10,11 +10,30 @@
 </md-toolbar>
 <md-sidenav md-is-open="sidenav.showNav" class="md-sidenav-left">
 	<md-toolbar layout-padding class="md-medium-tall">
-        <h2 class="md-toolbar-tools">Actions</h2>
+        <md-button ng-href="/#dashboard"><h2 class="md-toolbar-tools">Menu de herramientas</h2></md-button>
+        
 	</md-toolbar>
     <div layout-padding>
-        <h4>Contribuyentes</h4>
-        <h4>Solicitudes</h4>
-        <h4>Prestatarios</h4>
+    	<md-list>
+    		<md-item ng-repeat="item in sidenav.menu">
+				  <md-item-content md-ink-ripple layout="row">
+				  	
+				  	<md-icon md-svg-src="{{item.icon}}"></md-icon>
+				  	 <md-tooltip   md-direction="right">{{item.title}}</md-tooltip>
+				  	 <md-list>
+				  	 	<md-item ng-repeat="op in item.options">
+				  	 		<md-item-content>
+				  	 			<a href="{{op.url}}">{{op.title}}</a>
+				  	 		</md-item-content>
+				  	 		<md-divider></md-divider>
+				  	 	</md-item>
+				  	 </md-list>
+
+
+				  </md-item-content>
+				   <md-divider></md-divider>
+    		</md-item>
+    	</md-list>
+    
     </div>
 </md-sidenav>
