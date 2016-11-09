@@ -14,13 +14,18 @@ function agregarInmueble(){
 		'Previo baldio'
 	];
 	
+	vm.alumbrado = [
+		'A',
+		'B',
+		'C',
+		'D',
+		'E'
+	];
+	
 	vm.enviarFormulario = function(){
-	 if(!vm.formData.isTipoD){
-	 	vm.formData.isTipoD = false;
-	 }
-	 if(!vm.formData.isComercial){
-	 	vm.formData.isComercial = false;
-	 }
+		if(!vm.formData.isComercial){
+			vm.formData.isComercial = false;
+		}
 		console.log(vm.formData);
 	};
 }

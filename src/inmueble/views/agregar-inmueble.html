@@ -2,7 +2,7 @@
 <md-content layout="column">
 	<form name="inmuebleForm">
 		<md-input-container class="md-block">
-			<md-select ng-model="addProperty.formData.TipoInmueble" placeholder="Tipo de inmueble">
+			<md-select ng-model="addProperty.formData.tipoInmueble" placeholder="Tipo de inmueble">
 				<md-option ng-value="tipo" ng-repeat="tipo in addProperty.tiposInmuebles">
 					{{tipo}}
 				</md-option>
@@ -12,7 +12,11 @@
 			<md-checkbox ng-model="addProperty.formData.isComercial">Inmueble comercial</md-checkbox>
 		</md-input-container>
 		<md-input-container class="md-block">
-			<md-checkbox ng-model="addProperty.formData.isTipoD">Alumbrado Tipo-D</md-checkbox>
+			<md-select ng-model="addProperty.formData.tipoAlumbrado" placeholder="Tipo de alumbrado">
+				<md-option ng-value="item" ng-repeat="item in addProperty.alumbrado">
+					{{item}}
+				</md-option>
+			</md-select>
 		</md-input-container>
 	
 		<md-input-container class="md-block">
@@ -41,6 +45,15 @@
 				<div ng-message="pattern">No puede contener caracteres</div>		
 			</div>
 		</md-input-container>
+		<md-input-container>
+			<label>Superficie</label>
+			<input required ng-pattern="/^[1-9]\d*(\.\d+)?$/" md-no-asterisk ng-model="addProperty.formData.superficie" name="inputSuperficie">
+			<div ng-messages="inmuebleForm.inputSuperficie.$error" ng-show="inmuebleForm.inputSuperficie.$dirty" multiple>
+				<div ng-message="required">El valor es obligatorio</div>
+				<div ng-message="pattern">No puede contener caracteres</div>		
+			</div>
+			
+		</md-input-container>
         <md-input-container>
             <label>Observaciones</label>
             <textarea ng-model="addProperty.formData.observaciones" name="inputObservaciones" maxlength="200" required
@@ -50,6 +63,7 @@
             
             </div>
         </md-input-container>
+        
 		<md-button class="md-raised md-warn" ng-disabled="inmuebleForm.$invalid" ng-click="addProperty.enviarFormulario()">Agregar nuevo</md-button>
 	
 	</form>

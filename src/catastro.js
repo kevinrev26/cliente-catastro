@@ -52,6 +52,11 @@ function configuracionRutas($routeProvider){
     	controller: 'agregarInmuebleCtrl',
     	controllerAs: 'addProperty'
     })
+    .when('/buscar-inmueble', {
+    	templateUrl: 'src/inmueble/views/buscar-inmueble.html',
+    	controller: 'buscarInmuebleCtrl',
+    	controllerAs: 'findProperty'
+    }) 	
     .otherwise({
         redirectTo: '/'
     });

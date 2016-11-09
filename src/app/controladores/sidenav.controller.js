@@ -85,6 +85,10 @@ function sidenav(){
 				{
 					'title' : 'Agregar inmueble',
 					'url' : '/#agregar-inmueble'
+				},
+				{
+					'title' : 'Buscar inmueble',
+					'url' : '/#buscar-inmueble'
 				}
 			]
 		}
