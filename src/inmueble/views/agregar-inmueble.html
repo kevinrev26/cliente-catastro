@@ -64,6 +64,14 @@
             </div>
         </md-input-container>
         
+        <md-input-container>
+			<label>Direccion </label>
+			<input required md-no-asterisk name="inputDireccion" ng-model="addProperty.formData.direccion" type="text" placeholder="Avenida las amapolias, casa numero 4, San Salvador, San Salvador">
+			<div ng-messages="inmuebleForm.inputDireccion.$error" ng-show="inmuebleForm.inputDireccion.$dirty">
+				<div ng-message="required">Este campo es requerido</div>
+			</div>
+		</md-input-container>
+        
 		<md-button class="md-raised md-warn" ng-disabled="inmuebleForm.$invalid" ng-click="addProperty.enviarFormulario()">Agregar nuevo</md-button>
 	
 	</form>

@@ -29,13 +29,6 @@
 			
 		</md-input-container>
 		<md-input-container>
-			<label>Direccion </label>
-			<input required md-no-asterisk name="inputDireccion" ng-model="contribuyente.formData.direccion" type="text" placeholder="Avenida las amapolias, casa numero 4, San Salvador, San Salvador">
-			<div ng-messages="contribForm.inputDireccion.$error" ng-show="contribForm.inputDireccion.$dirty">
-				<div ng-message="required">Este campo es requerido</div>
-			</div>
-		</md-input-container>
-		<md-input-container>
 			<label>Telefono </label>
 			<input required minlength="8" maxlength="8" ng-pattern="/^[0-9]+$/"  md-no-asterisk name="inputTelefono" ng-model="contribuyente.formData.telefono" type="text" placeholder="xxxxyyyy">
 			<div ng-messages="contribForm.inputTelefono.$error" ng-show="contribForm.inputTelefono.$dirty" multiple>
