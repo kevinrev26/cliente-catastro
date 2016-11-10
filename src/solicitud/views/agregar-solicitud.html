@@ -1,0 +1,54 @@
+<navegacion titulo="solicitud.titulo"></navegacion>
+<md-content class="md-padding"  layout="column" layout-padding>
+	<form name="solicitudForm" layout="column">
+		<md-input-container layout="row">
+			<label>Numero de documento</label>
+			<input required md-no-asterisk name="inputDocumento" ng-model="solicitud.formData.numeroDocumento" type="text" placeholder="TRIN-212">
+			<div ng-messages="solicitudForm.inputDocumento.$error" ng-show="solicitudForm.inputDocumento.$dirty">
+				<div ng-message="required">Este campo es requerido</div>
+			</div>
+		</md-input-container layout="row">
+		<md-input-container> 
+			<md-select ng-model="solicitud.formData.tipoTramite" placeholder="Tipo de tramite"> 
+				<md-option ng-value="item" ng-repeat="item in solicitud.tramites"> {{item}} </md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container layout="row">
+			<label>Numero de contribuyente</label>
+			<input required md-no-asterisk name="inputNumero" ng-model="solicitud.formData.numero" type="text" placeholder="752">
+			<div ng-messages="solicitudForm.inputNumero.$error" ng-show="solicitudForm.inputNumero.$dirty">
+				<div ng-message="required">Este campo es requerido</div>
+			</div>
+		</md-input-container>
+		<md-input-container layout="row">
+			<label>Nombre del solicitante</label>
+			<input required md-no-asterisk name="inputNombre" ng-model="solicitud.formData.nombre" type="text">
+			<div ng-messages="solicitudForm.inputNombre.$error" ng-show="solicitudForm.inputNumero.$dirty">
+				<div ng-message="required">Este campo es requerido</div>
+			</div>
+		</md-input-container>
+		
+		<md-input-container>
+			<label>Ingrese el numero de identificacion tributaria</label>
+			<input required minlength="12" maxlength="12" ng-pattern="/^[0-9]+$/" md-no-asterisk name="inputNit" ng-model="solicitud.formData.nit" type="text" placeholder="91426079371213">
+			<div ng-messages="solicitudForm.inputNit.$error" ng-show="contribForm.inputNit.$dirty" multiple>
+				<div ng-message="required">El NIT es requerido para ingresar un contribuyente</div>
+				<div ng-message="minlength">Numero invalido, ingrese los 12 digitos</div>
+				<div ng-message="maxlength">Numero invalido, ingrese los 12 digitos</div>
+				<div ng-message="pattern">El nit solo puede contener numeros</div>
+			</div>
+			
+		</md-input-container>
+		<md-input-container>
+			<label>Ingrese fecha de solicitud</label>
+        	<md-datepicker ng-model="solicitud.formData.fecha"></md-datepicker>
+        </md-input-container>
+        
+        <md-input-container> 
+			<md-select ng-model="solicitud.formData.estado" placeholder="Estado"> 
+				<md-option ng-value="item" ng-repeat="item in solicitud.estados"> {{item}} </md-option>
+			</md-select>
+		</md-input-container>
+		<md-button class="md-raised" ng-disabled="solicitudForm.$invalid" ng-click="solicitud.enviarFormulario()">Agregar nuevo</md-button>
+	</form>
+</md-content>
