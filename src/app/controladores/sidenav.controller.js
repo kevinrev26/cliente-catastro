@@ -63,8 +63,8 @@ function sidenav(){
 					'url' : '/#agregar-tasa'
 				},
 				{
-					'title': 'Buscar tasa',
-					'url' : '/#buscar-tasa'
+					'title': 'Ver tasas',
+					'url' : '/#listar-tasas'
 				}	
 			]
 		},

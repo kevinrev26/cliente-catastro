@@ -56,7 +56,12 @@ function configuracionRutas($routeProvider){
     	templateUrl: 'src/inmueble/views/buscar-inmueble.html',
     	controller: 'buscarInmuebleCtrl',
     	controllerAs: 'findProperty'
-    }) 	
+    })
+    .when('/listar-tasas', {
+    	templateUrl: 'src/tasas/views/listar-tasas.html',
+    	controller: 'listarTasasCtrl',
+    	controllerAs: 'listTax'
+    })
     .otherwise({
         redirectTo: '/'
     });
