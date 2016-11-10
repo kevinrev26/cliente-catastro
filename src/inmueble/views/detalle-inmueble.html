@@ -1,4 +1,8 @@
 <navegacion titulo="detalleInmueble.titulo"></navegacion>
 <md-content layout="column">
-	{{detalleInmueble.Inmueble}}
+	{{detalleInmueble.Inmueble}}	
+	
+	<md-button flex="20" ng-click="detalleInmueble.agregarPropietario($event)">
+       Agregar un nuevo propietario
+    </md-button>
 </md-content>

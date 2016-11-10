@@ -15,6 +15,7 @@ function inmuebleService(){
 		this.superficie = superficie;
 		this.observaciones = observaciones;
 		this.direccion = dir;
+		this.propietario = {};
 		
 	}
 	

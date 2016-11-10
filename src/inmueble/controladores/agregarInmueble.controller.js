@@ -23,6 +23,7 @@ function agregarInmueble(){
 	];
 	
 	vm.enviarFormulario = function(){
+		vm.formData.propietario = {};
 		if(!vm.formData.isComercial){
 			vm.formData.isComercial = false;
 		}
