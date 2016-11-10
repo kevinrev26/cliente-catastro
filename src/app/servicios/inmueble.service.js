@@ -22,7 +22,7 @@ function inmuebleService(){
 	inmueble.init = function(){
 		var i = new Inmueble('Condominio',false, 'C', '12345678', '123000', '27.5', '435.20', 'bla bla', 'Avenida 1');
 		inmueble.inmuebles.push(i);
-		var l = new Inmueble('Vivienda',true, 'B', '12345678', '127000', '17.5', '535.20', 'bla bla blabla', 'Avenida 19');
+		var l = new Inmueble('Vivienda',true, 'B', '12345578', '127000', '17.5', '535.20', 'bla bla blabla', 'Avenida 19');
 		inmueble.inmuebles.push(l);	
 	};
 	
@@ -30,7 +30,18 @@ function inmuebleService(){
 	
 	inmueble.getInmuebles = function(){
 		return inmueble.inmuebles;
-	}
+	};
+	
+	inmueble.getInmuebleById = function(inmuebleId){
+		for(var i=0; i<inmueble.inmuebles.length; i++){
+			var aux = inmueble.inmuebles[i];
+			if(aux.clave===inmuebleId){
+				console.log(aux);
+				return aux;
+			}
+		}
+	};
+	
 	
 }
 

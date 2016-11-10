@@ -1,6 +1,6 @@
 <navegacion titulo="findProperty.titulo"></navegacion>
 <md-content layout="column">
 	<div ng-repeat="property in findProperty.inmuebles">
-		{{property}}
+		<a ng-href="/#inmueble/{{property.clave}}">{{property}}</a>
 	</div>
 </md-content>

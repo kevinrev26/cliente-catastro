@@ -3,7 +3,7 @@
 	<form name="solicitudForm" layout="column">
 		<md-input-container layout="row">
 			<label>Numero de documento</label>
-			<input required md-no-asterisk name="inputDocumento" ng-model="solicitud.formData.numeroDocumento" type="text" placeholder="TRIN-212">
+			<input required md-no-asterisk name="inputDocumento" ng-model="solicitud.formData.numeroDocumento" type="text" placeholder="TRIN212">
 			<div ng-messages="solicitudForm.inputDocumento.$error" ng-show="solicitudForm.inputDocumento.$dirty">
 				<div ng-message="required">Este campo es requerido</div>
 			</div>

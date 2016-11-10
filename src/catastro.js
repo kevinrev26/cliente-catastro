@@ -58,6 +58,11 @@ function configuracionRutas($routeProvider){
     	controller: 'buscarInmuebleCtrl',
     	controllerAs: 'findProperty'
     })
+    .when('/inmueble/:inmuebleid',{
+    	templateUrl: 'src/inmueble/views/detalle-inmueble.html',
+    	controller: 'detalleInmuebleCtrl',
+    	controllerAs: 'detalleInmueble'
+    })
     .when('/listar-tasas', {
     	templateUrl: 'src/tasas/views/listar-tasas.html',
     	controller: 'listarTasasCtrl',
