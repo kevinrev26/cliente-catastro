@@ -11,6 +11,7 @@ angular.module('catastro', [
                             'ngMaterial',
                             'ngRoute',
                             'ngMessages',
+                            'base64',
                             'catastro.app',
                             'catastro.login',                        
                             'catastro.dashboard',
@@ -80,6 +81,17 @@ function configuracionRutas($routeProvider){
     //$locationProvider.html5Mode(true);
 }
 
+
+//function para las headers
+function httpProveedores($httpProvider, $base64){
+    var auth = $base64.encode("user:123456");
+    $httpProvider.defaults.headers.common = {};
+    $httpProvider.defaults.headers.common['Authorization'] = 'Basic' + auth;
+    $httpProvider.defaults.headers.post = {};
+    $httpProvider.defaults.headers.put = {};
+    $httpProvider.defaults.headers.patch = {}
+}
+
 //Funcion para configuracion de la paleta de colores
 function configurarPaleta($mdThemingProvider){
 	$mdThemingProvider.theme('default')
@@ -87,6 +99,10 @@ function configurarPaleta($mdThemingProvider){
 		.accentPalette('brown');
 		
 }
+
+//Agregando modulo
+angular.module('catastro')
+             .config(['$httpProvider', '$base64', httpProveedores]);
 
 //Agregando la funcion de rutas al modulo de la aplicacion
 angular.module('catastro')

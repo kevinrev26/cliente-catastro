@@ -7,7 +7,12 @@
 function listarContribuyentes(contribService){
 	 var vm = this;
 	 vm.titulo = "Buscar contribuyentes";
-	 vm.contribuyentes = contribService.getUsuarios();
+	 contribService.getUsuarios()
+        .then(function(result){
+         vm.contribuyentes = result.data;
+     }, function(error){
+         console.log('ERROR: ' + error);
+     });
 	 	 
 }
 

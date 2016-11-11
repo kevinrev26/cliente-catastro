@@ -75,7 +75,12 @@ function detalle($scope, $routeParams, $mdDialog, inmuebleService, contribServic
         };
         
         $scope.buscar = function(){
-            $scope.contr = contribService.getUsuarioById(parseInt($scope.id)); 
+             contribService.getUsuarioById(parseInt($scope.id))
+             .then(function(result){
+                 $scope.contr = result.data;
+             },function(error){
+                 $scope.error = error;
+             }); 
             //console.log();
         };
         
