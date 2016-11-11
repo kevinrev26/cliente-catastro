@@ -9,7 +9,7 @@
 			</md-select>
 		</md-input-container>
 		<md-input-container class="md-block">
-			<md-checkbox ng-model="addProperty.formData.isComercial">Inmueble comercial</md-checkbox>
+			<md-checkbox ng-model="addProperty.formData.comercio">Inmueble comercial</md-checkbox>
 		</md-input-container>
 		<md-input-container class="md-block">
 			<md-select ng-model="addProperty.formData.tipoAlumbrado" placeholder="Tipo de alumbrado">
@@ -21,7 +21,7 @@
 	
 		<md-input-container class="md-block">
 			<label>Clave catastral</label>
-			<input required minlength="7" maxlength="7" ng-pattern="/^[0-9]+$/" md-no-asterisk ng-model="addProperty.formData.clave" type="text" placeholder="2521202" name="inputClave">
+			<input required minlength="7" maxlength="7" ng-pattern="/^[0-9]+$/" md-no-asterisk ng-model="addProperty.formData.claveCatastral" type="text" placeholder="2521202" name="inputClave">
 			<div ng-messages="inmuebleForm.inputClave.$error" ng-show="inmuebleForm.inputClave.$dirty" multiple>
 				<div ng-message="required">La clave es obligatoria</div>
 				<div ng-message="minlength">Debe contener 7 digitos</div>

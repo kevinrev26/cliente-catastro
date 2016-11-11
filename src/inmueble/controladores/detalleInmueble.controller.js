@@ -10,13 +10,18 @@ function detalle($scope, $routeParams, $mdDialog, inmuebleService, contribServic
 	vm.inmuebleId = $routeParams.inmuebleid;
 	vm.titulo = "Clave catastral: " + vm.inmuebleId;
 	console.log(vm.inmuebleId);
-	vm.Inmueble = inmuebleService.getInmuebleById(vm.inmuebleId);
+	inmuebleService.getInmuebleById(vm.inmuebleId)
+    .then(function (response) {
+        vm.Inmueble = response.data;
+    }, function (error) {
+        console.log(error);
+    });
 	//Propietarios		
     
   
     
 	vm.agregarPropietario = function($event){
-		console.log('Click en boton');
+		//console.log('Click en boton');
 		$mdDialog.show({
 			parent :  angular.element(document.body),
 			targetEvent : $event,
@@ -29,9 +34,9 @@ function detalle($scope, $routeParams, $mdDialog, inmuebleService, contribServic
         .then(function(contribuyente){
             
             //console.log(contribuyente);            
-            inmuebleService.setPropietario(vm.inmuebleId, contribuyente);
-            
-            alert = $mdDialog.alert({
+            inmuebleService.setPropietario(vm.inmuebleId, contribuyente)
+            .then(function(response){
+                alert = $mdDialog.alert({
                 title: '¡Realizado!',
                 textContent: 'Propietario modificado',
                 ok: 'OK'
@@ -43,6 +48,23 @@ function detalle($scope, $routeParams, $mdDialog, inmuebleService, contribServic
             });
             
             $route.reload();
+            
+            }, function(error){
+                alert = $mdDialog.alert({
+                title: '¡Opps!',
+                textContent: 'Ocurrio algo, vuelva a intentarlo',
+                ok: 'OK'
+            });
+
+            $mdDialog.show( alert )
+                .finally(function() {
+                  alert = undefined;
+            });
+            
+            //$route.reload();
+            
+            });
+            
             
             
         }, function(){

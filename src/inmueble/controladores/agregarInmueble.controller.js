@@ -5,7 +5,7 @@
 * Controlador para agregar un nuevo inmueble
 */
 
-function agregarInmueble(){
+function agregarInmueble(inmuebleService){
 	var vm = this;
 	vm.titulo = "Agregar inmueble";
 	vm.tiposInmuebles = [
@@ -23,13 +23,21 @@ function agregarInmueble(){
 	];
 	
 	vm.enviarFormulario = function(){
-		vm.formData.propietario = {};
+		vm.formData.idContribuyente = {};
 		if(!vm.formData.isComercial){
 			vm.formData.isComercial = false;
 		}
-		console.log(vm.formData);
+        
+        inmuebleService.addInmueble(vm.formData)
+            .then(function(result){
+            console.log(result.data);
+        }, function(error){
+            console.log(error);
+        });
+		//console.log(vm.formData);
+        
 	};
 }
 
 angular.module('catastro.inmueble')
-	.controller('agregarInmuebleCtrl', agregarInmueble);
+	.controller('agregarInmuebleCtrl', ['inmuebleService', agregarInmueble]);

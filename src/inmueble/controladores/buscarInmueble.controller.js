@@ -7,7 +7,12 @@
 function buscar(inmuebleService){
 	var vm = this;
 	vm.titulo = 'Buscar inmueble';
-	vm.inmuebles = inmuebleService.getInmuebles();
+	inmuebleService.getInmuebles()
+    .then(function(response){
+        vm.inmuebles = response.data;
+    }, function(Error){
+        console.log(Error);
+    });
 	
 }
 

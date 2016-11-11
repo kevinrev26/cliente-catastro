@@ -3,7 +3,7 @@
 * [Titulo]
 * [Descripcion]
 */
-function inmuebleService(){
+function inmuebleService($http){
 	var inmueble = this;
 	function Inmueble(tipo, comercial, alumbrado, clave, valor, metros, superficie, observaciones, dir){
 		this.tipoInmueble = tipo;
@@ -27,25 +27,45 @@ function inmuebleService(){
 		inmueble.inmuebles.push(l);	
 	};
 	
-	inmueble.init();
+	//inmueble.init();
 	
+    inmueble.addInmueble = function (inm){
+        return $http({
+            url: 'http://localhost:3000/api/inmuebles/',
+            method: 'POST',
+            data : inm,
+            headers: {'Content-Type': 'application/json'}
+        });
+    }
+    
 	inmueble.getInmuebles = function(){
-		return inmueble.inmuebles;
+		return $http.get('http://localhost:3000/api/inmuebles/');
 	};
 	
 	inmueble.getInmuebleById = function(inmuebleId){
-		for(var i=0; i<inmueble.inmuebles.length; i++){
-			var aux = inmueble.inmuebles[i];
-			if(aux.clave===inmuebleId){
-				console.log(aux);
-				return aux;
-			}
-		}
+		return $http.get('http://localhost:3000/api/inmuebles/'+inmuebleId);
 	};
     
     inmueble.setPropietario = function(inmuebleId, prop){
-      inmueble.getInmuebleById(inmuebleId)
-        .propietario = prop;
+      /*inmueble.getInmuebleById(inmuebleId)
+        .propietario = prop;*/
+        
+        inmueble.getInmuebleById(inmuebleId)
+            .then(function (response){
+                
+                var aux = response.data;
+                console.log(aux);
+                console.log(prop);
+                aux.idContribuyente = prop;
+                return $http({
+                    url: 'http://localhost:3000/api/inmuebles/'+inmuebleId,
+                    method: 'PUT',
+                    data: aux,
+                    headers: {'Content-Type': 'application/json'}                
+                });
+        }, function(error){
+            console.log(eror);
+        });
         
     };
 	
@@ -53,4 +73,4 @@ function inmuebleService(){
 }
 
 angular.module('catastro.app')
-	.service('inmuebleService',inmuebleService);
+	.service('inmuebleService',['$http', inmuebleService]);
