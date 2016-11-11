@@ -1,10 +1,11 @@
 <navegacion titulo="contribuyente.titulo"></navegacion>
 
-<md-content class="md-padding"  layout="column" layout-padding>
-	<form name="contribForm" layout="column">
+<md-content layout="column" layout-padding>
+    
+	<form name="contribForm"  layout="column">
 		<md-input-container class="md-block">
 			<label> Ingrese los nombres del contribuyente</label>
-			<input required minlength="2" md-no-asterisk name="inputNombre" ng-model="contribuyente.formData.nombre" type="text" placeholder="Yahaira Daniela">
+			<input required minlength="2" md-no-asterisk name="inputNombre" ng-model="contribuyente.formData.nombre" type="text" placeholder="Alex Ernesto">
 			<div ng-messages="contribForm.inputNombre.$error" ng-show="contribForm.inputNombre.$dirty" md-auto-hide="false" ng-if="contribForm.inputNombre.$touched" multiple>
 				<div ng-message="required">Este campo es requerido</div>
 				<div ng-message="minlength">El nombre debe ser mayor a dos caracteres</div>
@@ -17,6 +18,7 @@
 				<div ng-message="required">Este campo es requerido</div>
 				<div ng-message="minlength">El apellido debe ser mayor a dos caracteres</div>
 			</div>
+        </md-input-container>
 		<md-input-container>
 			<label>Ingrese el numero de identificacion tributaria</label>
 			<input required minlength="12" maxlength="12" ng-pattern="/^[0-9]+$/" md-no-asterisk name="inputNit" ng-model="contribuyente.formData.nit" type="text" placeholder="91426079371213">
@@ -46,7 +48,11 @@
 				<div ng-message="email">Direccion de correo invalida</div>
 			</div>
 		</md-input-container>
-		<md-button class="md-raised md-warn" ng-disabled="contribForm.$invalid" ng-click="contribuyente.enviarFormulario()">Agregar nuevo</md-button>
+        <div layout="row">
+            <div flex="40"></div>
+		      <md-button flex="20" class="md-raised md-warn" ng-disabled="contribForm.$invalid" ng-click="contribuyente.enviarFormulario()">Agregar nuevo</md-button>
+            <div flex="40"></div>
+        </div>
 	</form>
 	
 </md-content>
