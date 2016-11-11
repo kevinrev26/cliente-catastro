@@ -1,7 +1,34 @@
 <navegacion titulo="detalleInmueble.titulo"></navegacion>
-<md-content layout="column">
-	{{detalleInmueble.Inmueble}}	
-	
+<md-content layout="column" layout-align="end center" layout-padding>
+	<!--{{detalleInmueble.Inmueble}}-->
+        
+    
+
+        <div layout="row">
+            <strong>Clave Catastral: </strong> {{detalleInmueble.Inmueble.claveCatastral}}
+        </div>
+        <div layout="row">
+            <strong>Direccion: </strong> {{detalleInmueble.Inmueble.direccion}}
+        </div>
+        <div layout="row">
+            <strong>Tipo de Inmueble: </strong> {{detalleInmueble.Inmueble.tipoInmueble}}
+        </div>
+        <div layout="row">
+            <strong>Tipo de Alumbrado: </strong> {{detalleInmueble.Inmueble.tipoAlumbrado}}
+        </div>
+<!--         <div layout="row">
+            <strong>¿Comercial?: {{detalleInmueble.Inmueble.comercio}}</strong>
+        </div>-->
+        <div layout="row">
+            <strong>Valor ($): </strong> {{detalleInmueble.Inmueble.valor}}
+        </div>
+        <div layout="row">
+            <strong>Metros de frente: </strong> {{detalleInmueble.Inmueble.metros}}
+        </div>
+        <div layout="row">
+            <strong>Superficie: </strong> {{detalleInmueble.Inmueble.superficie}}
+        </div>
+    
 	<md-button class="md-primary md-raised" ng-click="detalleInmueble.agregarPropietario($event)">
        Agregar un nuevo propietario
     </md-button>

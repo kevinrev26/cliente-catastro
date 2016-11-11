@@ -13,14 +13,14 @@
         <md-button ng-href="/#dashboard"><h2 class="md-toolbar-tools">Menu de herramientas</h2></md-button>
         
 	</md-toolbar>
-    <div layout-padding>
-    	<md-list>
+    <div>
+    	<md-list layout="column" layout-padding>
     		<md-item ng-repeat="item in sidenav.menu">
 				  <md-item-content md-ink-ripple layout="row">
 				  	
 				  	<md-icon md-svg-src="{{item.icon}}"></md-icon>
 				  	 <md-tooltip   md-direction="right">{{item.title}}</md-tooltip>
-				  	 <md-list>
+				  	 <md-list layout="column">
 				  	 	<md-item ng-repeat="op in item.options">
 				  	 		<md-item-content>
 				  	 			<a ng-href="{{op.url}}">{{op.title}}</a>
@@ -31,7 +31,7 @@
 
 
 				  </md-item-content>
-				   <md-divider></md-divider>
+				<md-divider></md-divider>
     		</md-item>
     	</md-list>
     
