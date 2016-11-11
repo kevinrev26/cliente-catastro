@@ -42,6 +42,12 @@ function inmuebleService(){
 			}
 		}
 	};
+    
+    inmueble.setPropietario = function(inmuebleId, prop){
+      inmueble.getInmuebleById(inmuebleId)
+        .propietario = prop;
+        
+    };
 	
 	
 }

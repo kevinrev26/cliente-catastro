@@ -3,11 +3,12 @@
 * [Titulo]
 * [Descripcion]
 */
-function agregarPropietario($scope, $mdDialog){
-	$scope.closeDialog = function(){
+function agregarPropietario($mdDialog) {
+    var vm = this;
+	vm.closeDialog = function () {
 		$mdDialog.hide();
 	};
 }
 
 angular.module('catastro.inmueble')
-	.controller('agregarPropietarioCtrl', ['$scope', '$mdDialog',  agregarPropietario]);
+    .controller('agregarPropietarioCtrl',['mdDialog', agregarPropietario]);
