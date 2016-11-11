@@ -1,6 +1,7 @@
 <navegacion titulo="addProperty.titulo"></navegacion>
-<md-content layout="column">
-	<form name="inmuebleForm">
+<md-content layout="column" layout-padding>
+	<form name="inmuebleForm" layout="column">
+        <div layout="row" layout-padding layout-align="center center">
 		<md-input-container class="md-block">
 			<md-select ng-model="addProperty.formData.tipoInmueble" placeholder="Tipo de inmueble">
 				<md-option ng-value="tipo" ng-repeat="tipo in addProperty.tiposInmuebles">
@@ -18,7 +19,7 @@
 				</md-option>
 			</md-select>
 		</md-input-container>
-	
+	   </div>
 		<md-input-container class="md-block">
 			<label>Clave catastral</label>
 			<input required minlength="7" maxlength="7" ng-pattern="/^[0-9]+$/" md-no-asterisk ng-model="addProperty.formData.claveCatastral" type="text" placeholder="2521202" name="inputClave">
@@ -71,8 +72,10 @@
 				<div ng-message="required">Este campo es requerido</div>
 			</div>
 		</md-input-container>
-        
-		<md-button class="md-raised md-warn" ng-disabled="inmuebleForm.$invalid" ng-click="addProperty.enviarFormulario()">Agregar nuevo</md-button>
-	
+        <div layout="row">
+            <div flex="40"></div>
+		      <md-button flex="20" class="md-raised md-warn" ng-disabled="inmuebleForm.$invalid" ng-click="addProperty.enviarFormulario()">Agregar nuevo</md-button>
+            <div flex="40"></div>
+        </div>
 	</form>
 </md-content>
