@@ -1,8 +1,8 @@
 
 
-<md-content layout="column" >
+<md-content layout="row" >
     <div flex="25"></div>
-    <md-card flex="50" layout-align="center center">
+    <md-card flex="50" layout-align="start center">
         <md-card-header  class="md-accent">
             <div layout=row>
                 <md-card-avatar>
@@ -14,17 +14,18 @@
                 </md-header-text>
             </div>
         </md-card-header>
-        <md-card-content>
-            <md-card-title layout-align="center center">
-                <div flex="25"></div>
-                <md-card-title-media flex="50">
+        <!--<div flex="25"></div>-->
+        <md-card-content flex layout="row">
+            <md-card-title>
+                
+                <md-card-title-media>
                     <img src="assets/img/team.png" class="md-media-md" alt="teamwork">
                 </md-card-title-media>
-                <div flex="25"></div>
             </md-card-title>
-            <p>Ingrese las credenciales proporcionadas por la organizacion, si no tiene por favor remitase a al departamente de TI para solicitar una</p>
+            <p>Ingrese las credenciales proporcionadas por la organizacion, si no tiene por favor remitase a al departamente de TI para solicitar una.</p>
         </md-card-content>
-        <md-card-actions layout-align="end end">
+        <!--<div flex="25"></div>-->
+        <md-card-actions layout-align="end center">
             <md-button ng-href="/#dashboard" class="md-raised md-primary">Ingresar</md-button>
         </md-card-actions>
     </md-card>
